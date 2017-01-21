@@ -226,7 +226,7 @@ Select2.prototype = {
     },
     run: function() {
         try {
-            // this.initSelect2();
+            window.jetSelect2 = this;
         } catch (e) {
             console.error(e, e.stack);
         }
