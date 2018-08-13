@@ -1,6 +1,32 @@
 version: 2
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - django-1.10
+      - django-2.0
+
 jobs:
-  build:
+  django-1.10:
+    docker:
+      - image: circleci/python:3.6.6-jessie-node
+
+    steps:
+      - checkout
+      - run:
+          name: Install Python deps in a venv
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install django==1.10
+      - run:
+          name: Run tests
+          command: |
+            . venv/bin/activate
+            python manage.py test
+
+  django-2.0:
     docker:
       - image: circleci/python:3.6.6-jessie-node
 
@@ -13,6 +39,7 @@ jobs:
             . venv/bin/activate
             pip install django==2.0
       - run:
+          name: Run tests
           command: |
             . venv/bin/activate
             python manage.py test
