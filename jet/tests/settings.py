@@ -24,7 +24,7 @@ INSTALLED_APPS = (
     'jet.tests',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -69,6 +69,5 @@ MEDIA_URL = ''
 
 STATIC_URL = '/static/'
 
-
-
-
+JET_INDEX_DASHBOARD = 'jet.tests.dashboard.TestIndexDashboard'
+JET_APP_INDEX_DASHBOARD = 'jet.tests.dashboard.TestAppIndexDashboard'

@@ -85,7 +85,9 @@ RelatedPopups.prototype = {
         });
 
         $('.inline-group').on('inline-group-row:added', function(e, $inlineItem) {
-            self.initLinksForRow($inlineItem.find('.form-row'));
+            $inlineItem.find('.form-row').each(function() {
+                self.initLinksForRow($(this));
+            });
         });
     },
     initPopupBackButton: function() {
@@ -215,7 +217,7 @@ RelatedPopups.prototype = {
             = window.showRelatedObjectPopup
             = function() { };
 
-        window.opener = this.windowStorage.previous();
+        window.opener = this.windowStorage.previous() || window.opener;
         window.dismissRelatedLookupPopup = function(win, chosenId) {
             self.closePopup({
                 action: 'lookup',

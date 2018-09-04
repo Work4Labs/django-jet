@@ -1,6 +1,58 @@
 Changelog
 =========
 
+1.0.7
+-----
+* PR-265: Fixed Django 2 support (thanks to HarryLafranc for PR)
+* PR-219: Added Persian/Farsi translation (thanks to pyzenberg for PR)
+* PR-271: Fix locale names (thanks to leonardoarroyo for PR)
+
+
+1.0.6
+-----
+* PR-191: Added sidebar pinning functionality (thanks to grigory51 for PR)
+* Issue-199: Fixed Django 1.11 context issue (thanks to gileadslostson for report)
+* Issue-202: Fixed inline-group-row:added event (thanks to a1Gupta for report)
+* Issue-188: Make testing use latest major Django versions and Python 3.5, 3.6 (thanks to liminspace for report)
+* Added new flexible menu customizing setting JET_SIDE_MENU_ITEMS
+* Added labels to sibling buttons
+* Fixed django.jQuery select change events
+* Fixed sidebar "Search..." label localization
+* Added select disabled style
+* Fixed initial value for select2 ajax fields when POST request
+
+
+1.0.5
+-----
+* PR-167: Added fallback to window.opener to support old Django popups (thanks to michaelkuty for PR)
+* PR-169: Added zh-cn localization (thanks to hbiboluo for PR)
+* PR-172: Added Polish localization (thanks to lburdzy for PR)
+* PR-174: Fixed permission error on ModelLookupForm (thanks to brenouchoa for PR)
+* PR-178: Added Arabic localization by KUWAITNET (thanks to Bashar for PR)
+* Removed "powered by Django JET" copyright
+* Fixed exception when initial object not found for RelatedFieldAjaxListFilter
+
+
+1.0.4
+-----
+* IMPORTANT: Fixed security issue with accessing model_lookup_view (when using RelatedFieldAjaxListFilter) without permissions
+* Fixed admin filters custom class attribute overrides
+* Fixed RelatedFieldAjaxListFilter to work with m2m fields
+
+
+1.0.3
+-----
+* PR-140: Added change message as tooltip to recent action dashboard module (thanks to michaelkuty for PR)
+* PR-130: Implement JET ui for django-admin-rangefilter (thanks to timur-orudzhov for PR)
+* PR-131: Use WSGIRequest resolver_match instead of resolve (thanks to m-vdb for PR)
+* PR-138: Fixed encoding error in jet_popup_response_data (thanks to michaelkuty for PR)
+* PR-137,138: Fixed UnicodeEncodeError in related popups (thanks to michaelkuty, Copperfield for PRs)
+* Issue-146: Fixed Django CMS plugin edit issue (thanks to bculpepper for report)
+* Issue-147: Fixed login for non superusers (thanks to gio82 for report)
+* Issue-147: Fixed RelatedFieldAjaxListFilter in Django 0.9+ (thanks to a1Gupta for report)
+* Issue-126: Fixed related popups for new items in tabular inlines (thanks to kmorey for report)
+
+
 1.0.2
 -----
 * PR-115: Removed mock request from get_model_queryset to fix 3rd party packages (thanks to imdario for PR)
